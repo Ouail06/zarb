@@ -5,6 +5,7 @@ for ($i=0; $i < count($a); $i++) {
    echo "<tr><td>{$a[$i]}</td><td>Rotterdam</td></tr>";}
    echo "</table>";
    echo date("") . "<br>";
+   
    echo date("l jS \of F Y h:i:s A") . "<br>";
     echo "<p>hello world</p> <br>";
    
@@ -24,4 +25,4 @@ foreach ($_POST as $name){
 };
 
   
-?>  
+?>

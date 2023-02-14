@@ -23,7 +23,7 @@
                 echo "<td>" . $row["leerling"] . "</td>";
                 echo "<td>" . $row["cijfer"] . "</td>";
                 echo "</tr>";
-            }
+            } 
         } else {
             echo "<tr><td colspan='3'>0 results</td></tr>";
         }
