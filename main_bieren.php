@@ -8,6 +8,7 @@ var_dump($conn);
     
 OvzBieren($conn){
     $conn = OpenDb();
+    
      echo "<table border='1'>"; 
     echo "<tr>
     <th>id</th>
@@ -23,4 +24,6 @@ OvzBieren($conn){
      {echo "Error: " . $e->getMessage(); } echo "</table>";
      $conn = null;
     }
+
+    
 ?>

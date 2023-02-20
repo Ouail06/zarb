@@ -14,8 +14,26 @@ function ConnectDb(){
     }
      
      
-     function OvzBieren($conn){
-    
+     function GetData($conn, $table){
+          GetData($conn, "bier");
+    $query = $conn->prepare("SELECT * FROM $table");
+    $query->execute();
+    $result = $query->fetchAll (PDO:: FETCH_ASSOC);
+    return $result;
+     
+     }
+     function OvzBieren($conn) {
+          $result = GetData($conn, "bier");
+
+          echo "<table border=1px>";
+          foreach ($result as $data) {
+               echo"<tr>";
+               echo "<td>";  $data ["naam"]; "</td>";
+               echo "<td>";  $data ["alcohol"]; "</td>";
+               echo"</tr>";
+          }
+          echo '<table border="1">';
+
      }
      ?>
     
