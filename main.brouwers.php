@@ -7,6 +7,6 @@ $conn = ConnectDb();
 var_dump($conn);
   
 
- OvzBieren($conn);
+ OvzBrouwer($conn);
  
 ?>

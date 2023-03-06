@@ -11,7 +11,9 @@ function ConnectDb() {
   }
 }
 
-function GetData($conn, $table){
+function GetData($table) 
+{ 
+     $conn = Connectdb();
     $query = $conn->prepare("SELECT * FROM $table");
     $query->execute();
     $result = $query->fetchALL(PDO::FETCH_ASSOC);
@@ -23,14 +25,8 @@ function OvzBieren() {
     echo "<tr><th>id</th><th>bieren</th><th>Alcoholpercentage</th></tr>";
   
     try {
-       $rows = GetData($conn, "bier");
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row["biercode"] . "</td>";
-            echo "<td>" . $row["naam"] . "</td>";
-            echo "<td>" . $row["alcohol"] . "</td>";
-            echo "</tr>";
-        }
+       $rows = GetData( "bier");
+      PrintTable($rows);
   
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -38,3 +34,22 @@ function OvzBieren() {
     echo "</table>";
     $conn = null;
   }
+
+ 
+        function PrintTable($result) {
+
+            echo "<table border='1px'>";
+
+            foreach ($result as $row) {
+                echo "<tr>";
+
+                foreach($row as $value){
+                    echo "<td>$value</td>";
+                }
+                echo "</tr>";
+            
+   }
+
+  
+    
+}

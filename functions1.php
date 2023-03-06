@@ -31,7 +31,7 @@
     return $result;
  }
 
- function OvzBieren(){
+ function OvzBrouwer(){
 
     // Haal alle bier record uit de tabel 
     $result = GetData("brouwer");
